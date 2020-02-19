@@ -16,10 +16,10 @@ document.onkeyup = function(event)
 // New variables to get the stuff form the id's
     var defaultText = document.getElementById("default-text");
     var userChoice = document.getElementById("user-choice-text");
-    var computerChoice = document.getElementById("computer-choice-text");
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
         var lettersGuessed = document.getElementById("lettersGuessed");
+        var numberOfGuessesLeft = document.getElementById("numberOfGuessesLeft");
         
                             // ** Here we go! ** \\
 
@@ -41,7 +41,6 @@ var userGuess = event.key;
                         else {
                             guessesLeft--
                             lettersGuessedArray.push(userGuess)
-                        console.log(guessesLeft)
                     }   
             if (guessesLeft === 0) {
                 losses++;
@@ -57,6 +56,7 @@ var userGuess = event.key;
                 winsText.textContent = "Your wins: " + wins;
                 lossesText.textContent = "Your losses: " + losses;
                 lettersGuessed.textContent = "You've guessed: " + lettersGuessedArray;
+                numberOfGuessesLeft.textContent = "You have " + guessesLeft + " guesses left."
 
             }
         
